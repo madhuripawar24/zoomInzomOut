@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    #image-container {
+      text-align: center;
+      padding-top: 50px;
+    }
+
+    #zoom-buttons {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="image-container">
+  <img id="zoomed-image" src="M1.jpeg" alt="Zoomable Image" width="400" height="300 ">
+</div>
+
+<div id="zoom-buttons">
+  <button onclick="zoomIn()">+</button>
+  <button onclick="zoomOut()">-</button>
+</div>
+
+<script>
+  let currentZoom = 1;
+
+  function zoomIn() {
+    currentZoom += 0.1;
+    updateZoom();
+  }
+
+  function zoomOut() {
+    currentZoom -= 0.1;
+    updateZoom();
+  }
+
+  function updateZoom() {
+    const image = document.getElementById('zoomed-image');
+    image.style.transform = `scale(${currentZoom})`;
+  }
+</script>
+
+</body>
+</html>
